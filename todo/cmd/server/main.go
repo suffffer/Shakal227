@@ -9,6 +9,7 @@ var err error
 
 func main() {
 	err = app.RunApp()
+	log.Println("Server is running")
 	if err != nil {
 		log.Fatal(err)
 	}
