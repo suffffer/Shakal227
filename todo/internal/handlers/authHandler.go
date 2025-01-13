@@ -25,5 +25,8 @@ func Login(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid credentials"})
 	}
 
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{"message": "Login successful"})
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "Login successful",
+		"user_id": user.ID,
+	})
 }

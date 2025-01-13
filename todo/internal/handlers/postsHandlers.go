@@ -136,3 +136,22 @@ func DeletePost(c *fiber.Ctx) error {
 
 	return c.JSON(fiber.Map{"message": "Post deleted"})
 }
+
+func GetPost(c *fiber.Ctx) error {
+	id := c.Params("id")
+	postID, err := strconv.Atoi(id)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid post ID",
+		})
+	}
+
+	var post db.Todo
+	if err := db.DB.First(&post, postID).Error; err != nil {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": "Post not found",
+		})
+	}
+
+	return c.Status(fiber.StatusOK).JSON(post)
+}
