@@ -1,0 +1,55 @@
+.taskContainer {
+    margin: 20px;
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dialog {
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+li.completed {
+    background-color: #d4f8d4;
+    text-decoration: line-through;
+}
+
+.addTask {
+    background-color: #6200ea;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteCompleted {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkbox {
+    cursor: pointer;
+}
